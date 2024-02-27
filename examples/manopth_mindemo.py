@@ -8,7 +8,7 @@ ncomps = 6
 
 # Initialize MANO layer
 mano_layer = ManoLayer(
-    mano_root='mano/models', use_pca=True, ncomps=ncomps, flat_hand_mean=False)
+    mano_root='/home/yuran/HHTP/manopth/mano/models', use_pca=True, ncomps=ncomps, flat_hand_mean=False)
 
 # Generate random shape parameters
 random_shape = torch.rand(batch_size, 10)
@@ -22,3 +22,6 @@ demo.display_hand({
     'joints': hand_joints
 },
                   mano_faces=mano_layer.th_faces)
+
+print('hand_verts:', hand_verts.shape)
+print('hand_joints:', hand_joints.shape)
